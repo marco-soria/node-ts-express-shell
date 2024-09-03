@@ -3,7 +3,7 @@
 services:
 
   mongo-db:
-    image: mongo:6.0.6
+    image: mongo:7.0.5
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongo-user
@@ -13,14 +13,14 @@ services:
     ports:
       - 27017:27017
 
-  postgres-db:
-    image: postgres:15.3
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_DB: my-db
-      POSTGRES_PASSWORD: 123456
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
+  # postgres-db:
+  #   image: postgres:15.3
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_DB: my-db
+  #     POSTGRES_PASSWORD: 123456
+  #   volumes:
+  #     - ./postgres:/var/lib/postgresql/data
+  #   ports:
+  #     - 5432:5432
