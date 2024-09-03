@@ -15,7 +15,7 @@ export class MongoDatabase {
 
     try {
       await mongoose.connect( mongoUrl, {
-        dbName
+        dbName: dbName,
       });
 
       return true;
@@ -27,8 +27,14 @@ export class MongoDatabase {
 
   }
 
+  static async disconnect() {
+    await mongoose.disconnect();
+  }
+
 
 }
+
+
 
 
 
